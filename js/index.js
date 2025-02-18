@@ -96,8 +96,8 @@ function updateFaixasResistor(faixas) {
     console.log(faixas)
     faixasElement.forEach((element, i) => {
         let faixa = faixas[i];
-        if (faixa === null){
-            faixa = 'sem-cor';
+        if (!faixa) {
+            faixa = 'X';
         }
         element.classList.replace(element.classList[2], faixa);
         element.firstElementChild.textContent = faixa.charAt(0).toUpperCase() + faixa.slice(1)
