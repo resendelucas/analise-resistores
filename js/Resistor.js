@@ -118,6 +118,13 @@ class Resistor {
         if (parseInt(stringValor.slice(2)) === 0){
             multiplicador = stringValor.length - 2;
         }
+        if (stringValor.length === 1){
+            primeiroNumerador = 0;
+            segundoNumerador = parseInt(stringValor[0]);
+        }
+        if (stringValor.length === 2){
+            multiplicador = 0;
+        }
 
         console.log(multiplicador)
 
@@ -125,7 +132,7 @@ class Resistor {
         let segundaFaixa = Object.keys(this.valoresPadrao).find(cor => this.valoresPadrao[cor].faixa === segundoNumerador);
         
         let multiplicadorFaixa = null;
-        if (multiplicador){
+        if (multiplicador >= 0){
             multiplicadorFaixa = Object.keys(this.valoresPadrao).find(cor => this.valoresPadrao[cor].multiplicador === Math.pow(10, multiplicador));
 
         }
