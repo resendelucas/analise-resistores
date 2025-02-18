@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Resistores</title>
+</head>
+<body>
+    <div id="root">
+        
+        <div id="bloco-resistor">
+            <div class="toggle-menu" id="toggle-menu-busca">
+                <div class="menu-option " id="menu-option-cor" onclick="handleMenuOption(this)">Busca por cor</div>
+                <div class="menu-option active" id="menu-option-valor" onclick="handleMenuOption(this)">Busca por valor</div>
+            </div>
+            <div class='wrapper' id="wrapper-resistor-cor">
+                <h2>Selecione as cores do resistor</h2>
+                <div class='resistor' id="resistor-principal">
+                    <div class='faixa marrom' id="primeira-faixa"
+                        onclick="handleClickFaixa(this)">
+            
+                        <span class='titulo-faixa'>Marrom</span>
+                        <div class="dropdown-faixa" id="primeira-faixa-seletor">
+                            <ul class="lista-cores">
+                                <li class="seletor preto">Preto</li>
+                                <li class="seletor marrom">Marrom</li>
+                                <li class="seletor vermelho">Vermelho</li>
+                                <li class="seletor laranja">Laranja</li>
+                                <li class="seletor amarelo">Amarelo</li>
+                                <li class="seletor verde">Verde</li>
+                                <li class="seletor azul">Azul</li>
+                                <li class="seletor violeta">Violeta</li>
+                                <li class="seletor cinza">Cinza</li>
+                                <li class="seletor branco">Branco</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='faixa preto' id="segunda-faixa"
+                        onclick="handleClickFaixa(this)">
+            
+                        <span class='titulo-faixa'>Preto</span>
+                        <div class="dropdown-faixa" id="segunda-faixa-seletor">
+                            <ul class="lista-cores">
+                                <li class="seletor preto">Preto</li>
+                                <li class="seletor marrom">Marrom</li>
+                                <li class="seletor vermelho">Vermelho</li>
+                                <li class="seletor laranja">Laranja</li>
+                                <li class="seletor amarelo">Amarelo</li>
+                                <li class="seletor verde">Verde</li>
+                                <li class="seletor azul">Azul</li>
+                                <li class="seletor violeta">Violeta</li>
+                                <li class="seletor cinza">Cinza</li>
+                                <li class="seletor branco">Branco</li>
+                            </ul>
+                        </div>
+        
+                    </div>
+                    <div class='faixa vermelho' id="terceira-faixa"
+                        onclick="handleClickFaixa(this)">
+                        <span class='titulo-faixa'>Vermelho</span>
+        
+                        <div class="dropdown-faixa" id="terceira-faixa-seletor">
+                            <ul class="lista-cores">
+                                <li class="seletor preto">Preto</li>
+                                <li class="seletor marrom">Marrom</li>
+                                <li class="seletor vermelho">Vermelho</li>
+                                <li class="seletor laranja">Laranja</li>
+                                <li class="seletor amarelo">Amarelo</li>
+                                <li class="seletor verde">Verde</li>
+                                <li class="seletor azul">Azul</li>
+                                <li class="seletor violeta">Violeta</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='faixa dourado' id="quarta-faixa"
+                        onclick="handleClickFaixa(this)">
+                        
+                        <span class='titulo-faixa'>Dourado</span>
+        
+                        <div class="dropdown-faixa" id="quarta-faixa-seletor">
+                            <ul class="lista-cores">
+                                <li class="seletor prata">Prata</li>
+                                <li class="seletor dourado">Dourado</li>
+                                <li class="seletor marrom">Marrom</li>
+                                <li class="seletor vermelho">Vermelho</li>
+                                <li class="seletor verde">Verde</li>
+                                <li class="seletor azul">Azul</li>
+                                <li class="seletor violeta">Violeta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resultado">
+                    
+                    <h2 >Valor: </h2>
+                    <div class="resultado" id="valor-resistor">
+                        <h2 id="texto-valor"></h2>
+                        <h2 id="texto-tolerancia"></h2>
+                    </div>
+                </div>
+            </div>
+            <div class='wrapper' id="wrapper-resistor-valor">
+                <h2>Digite o valor do resistor:</h2>
+                <div class="input-valor">
+                    <input type="number" id="input-valor-resistor" class="input-resistor" oninput="handleInputValorResistor(this.value)" value="1000">
+                    <select id="input-prefixo-seletor" class="custom-select" onchange="handleChangePrefixo(this.value)">
+                        <option value="">Ω</option>
+                        <option value="k">kΩ</option>
+                        <option value="M">MΩ</option>
+                        <option value="G">GΩ</option>
+                    </select>
+                    <select id="input-tolerancia-seletor" class="custom-select" onchange="handleChangeTolerancia(this.value)">
+                        <option value='1'>±1%</option>
+                        <option value='2'>±2%</option>
+                        <option value="0.5">±0.5%</option>
+                        <option value="0.25">±0.25%</option>
+                        <option value="0.1">±0.5%</option>
+                        <option value="5" selected>±5%</option>
+                        <option value="10">±10%</option>
+                    </select>
+                </div>
+                <div class='resistor' id="resistor-cor">
+                    <div class='res-valor faixa-cor marrom' id="primeira-faixa-cor">
+                        <span class='titulo-faixa'>Marrom</span>
+                    </div>
+                    <div class='res-valor faixa-cor preto' id="segunda-faixa-cor">
+                        <span class='titulo-faixa'>Preto</span>
+                    </div>
+                    <div class='res-valor faixa-cor vermelho' id="terceira-faixa-cor">
+                        <span class='titulo-faixa'>Vermelho</span>
+                    </div>
+                    <div class='res-valor faixa-cor dourado' id="quarta-faixa-cor">
+                        <span class='titulo-faixa'>Dourado</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        .input-valor{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom:  20px;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+        #root{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+   
+        }
+
+        #wrapper-resistor-cor{
+            display: none;
+        }
+        .resultado {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        #bloco-resistor{
+            min-width: 500px;
+            min-height: 600px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins';
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+
+
+            width: 500px;
+            height: 600px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .resistor {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0px 20px;
+
+            background-color: bisque;
+
+            max-width: 80%;
+            min-width: 60%;
+            height: 110px;
+
+            border-radius: 8px;
+            
+            position: relative;
+            
+        }
+        .resistor>:last-child {
+            margin-left: 20px;
+        }
+
+        .resistor::before, .resistor::after {
+            content: '';
+            position: absolute;
+            width: 45px;
+            height: 20px;
+            background-color: rgb(112, 112, 112);
+            top: 50%;
+            transform: translateY(-50%);
+            
+        }
+
+        .resistor::before {
+            left: -45px;
+        }
+
+        .resistor::after {
+            right: -45px;
+        }
+
+
+        .faixa{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            position: relative;
+            width: 12%;
+            height: 100%;
+
+            flex-basis: 5;
+
+            transition: width 0.65s;
+
+            
+
+            &:hover, &.active{
+                width: 35%;
+                cursor: pointer;
+
+                span{
+                    opacity: 1;
+                    transition: opacity 0.65s;
+                }
+            }
+        }
+
+        .faixa-cor span{
+            opacity: 0;
+            transition: opacity 0.65s;
+        }
+        .faixa-cor{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            position: relative;
+            width: 12%;
+            height: 100%;
+
+            flex-basis: 5;
+
+            transition: width 0.65s;
+
+            
+
+            &:hover, &.active{
+                width: 35%;
+                cursor: pointer;
+
+                span{
+                    opacity: 1;
+                    transition: opacity 0.65s;
+                }
+            }
+        }
+
+        .faixa span{
+            opacity: 0;
+            transition: opacity 0.65s;
+        }
+
+        .dropdown-faixa{
+            display: none;
+            position: absolute;
+            top: 100%;
+        
+            width: 100%;
+            background-color: rgb(67, 22, 22);
+        }
+
+        .faixa.active .dropdown-faixa{
+            display: flex;
+        }
+
+        
+        .lista-cores{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            & li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                
+                border: black 1px solid;
+
+                font-size: 1.0rem;
+
+                transition: box-shadow 0.35s;
+
+                &:hover{
+                    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .vermelho{
+            background-color: #ed0404;
+            color: white;
+        }
+        .marrom{
+            background-color: #8b4513;
+            color: white;
+        }
+        .preto{
+            background-color: #000000;
+            color: white;
+        }
+        .laranja{
+            background-color: #ff8c00;
+            color: white;
+        }
+        .amarelo{
+            background-color: #ffff00;
+            color: black;
+        }
+        .verde{
+            background-color: #008000;
+        }
+        .azul{
+            background-color: #0000ff;
+            color: white;
+        }
+        .violeta{
+            background-color: #8a2be2;
+            color: white;
+        }
+        .cinza{
+            background-color: #808080;
+        }
+        .branco{
+            background-color: #ffffff;
+            color: black;
+        }
+        .dourado{
+            background-color: #ffd700;
+            color: black;
+        }
+        .prata{
+            background-color: #c0c0c0;
+        }
+        .sem-cor{
+            background-color: bisque;
+        }
+
+        #toggle-menu-busca{
+            width: 100%;
+            border-radius: 8px;
+            
+            display: flex;
+            
+        }
+
+        .menu-option{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 40px;
+            background-color: #f0f0f0;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.35s;
+
+            &:hover{
+                background-color: #e0e0e0;
+            }
+
+            &.active{
+                background-color: #ffffff;
+            }
+        }
+
+        #menu-option-cor{
+            border-top-left-radius: 8px;
+        }
+        #menu-option-valor{
+            border-top-right-radius: 8px;
+        }
+
+        
+        #input-valor-resistor, 
+        #input-prefixo-seletor, 
+        #input-tolerancia-seletor {
+            width: 120px;
+            height: 45px;
+            font-size: 1.2rem;
+            text-align: center;
+            border: 2px solid #ffffff;
+            border-radius: 8px; 
+            outline: none;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #input-valor-resistor:focus, 
+        #input-prefixo-seletor:focus, 
+        #input-tolerancia-seletor:focus {
+            border-color: #e6e5e5; 
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+    </style>
+    <script src="js/Resistor.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
