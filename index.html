@@ -111,13 +111,13 @@
                         <option value="G">GΩ</option>
                     </select>
                     <select id="input-tolerancia-seletor" class="custom-select" onchange="handleChangeTolerancia(this.value)">
-                        <option value='1'>±1%</option>
+                        <option value="10">±10%</option>
+                        <option value="5" selected>±5%</option>
                         <option value='2'>±2%</option>
+                        <option value='1'>±1%</option>
                         <option value="0.5">±0.5%</option>
                         <option value="0.25">±0.25%</option>
                         <option value="0.1">±0.1%</option>
-                        <option value="5" selected>±5%</option>
-                        <option value="10">±10%</option>
                     </select>
                 </div>
                 <div class='resistor' id="resistor-cor">
@@ -149,7 +149,10 @@
         -webkit-appearance: none;
         margin: 0;
         }
-
+        
+        .wrapper{
+            background-color: #f7f7f7;
+        }
         .input-valor{
             display: flex;
             justify-content: center;
