@@ -10,8 +10,8 @@
         
         <div id="bloco-resistor">
             <div class="toggle-menu" id="toggle-menu-busca">
-                <div class="menu-option " id="menu-option-cor" onclick="handleMenuOption(this)">Busca por cor</div>
-                <div class="menu-option active" id="menu-option-valor" onclick="handleMenuOption(this)">Busca por valor</div>
+                <div class="menu-option active" id="menu-option-cor" onclick="handleMenuOption(this)">Busca por cor</div>
+                <div class="menu-option" id="menu-option-valor" onclick="handleMenuOption(this)">Busca por valor</div>
             </div>
             <div class='wrapper' id="wrapper-resistor-cor">
                 <h2>Selecione as cores do resistor</h2>
@@ -170,6 +170,9 @@
         }
 
         #wrapper-resistor-cor{
+            display: flex;
+        }
+        #wrapper-resistor-valor{
             display: none;
         }
         .resultado {
