@@ -9,6 +9,7 @@
     <div id="root">
         
         <div id="bloco-resistor">
+            <div id="ajuda-calculo" onclick="abrirPopupCalculo()">Como é feito o cálculo?</div>
             <div class="toggle-menu" id="toggle-menu-busca">
                 <div class="menu-option active" id="menu-option-cor" onclick="handleMenuOption(this)">Busca por cor</div>
                 <div class="menu-option" id="menu-option-valor" onclick="handleMenuOption(this)">Busca por valor</div>
@@ -19,73 +20,73 @@
                     <div class='faixa marrom' id="primeira-faixa"
                         onclick="handleClickFaixa(this)">
             
-                        <span class='titulo-faixa'>Marrom</span>
+                        <span class='titulo-faixa'>Marrom (1)</span>
                         <div class="dropdown-faixa" id="primeira-faixa-seletor">
                             <ul class="lista-cores">
-                                <li class="seletor preto">Preto</li>
-                                <li class="seletor marrom">Marrom</li>
-                                <li class="seletor vermelho">Vermelho</li>
-                                <li class="seletor laranja">Laranja</li>
-                                <li class="seletor amarelo">Amarelo</li>
-                                <li class="seletor verde">Verde</li>
-                                <li class="seletor azul">Azul</li>
-                                <li class="seletor violeta">Violeta</li>
-                                <li class="seletor cinza">Cinza</li>
-                                <li class="seletor branco">Branco</li>
+                                <li class="seletor preto">Preto (0)</li>
+                                <li class="seletor marrom">Marrom (1)</li>
+                                <li class="seletor vermelho">Vermelho (2)</li>
+                                <li class="seletor laranja">Laranja (3)</li>
+                                <li class="seletor amarelo">Amarelo (4)</li>
+                                <li class="seletor verde">Verde (5)</li>
+                                <li class="seletor azul">Azul (6)</li>
+                                <li class="seletor violeta">Violeta (7)</li>
+                                <li class="seletor cinza">Cinza (8)</li>
+                                <li class="seletor branco">Branco (9)</li>
                             </ul>
                         </div>
                     </div>
                     <div class='faixa preto' id="segunda-faixa"
                         onclick="handleClickFaixa(this)">
             
-                        <span class='titulo-faixa'>Preto</span>
+                        <span class='titulo-faixa'>Preto (0)</span>
                         <div class="dropdown-faixa" id="segunda-faixa-seletor">
                             <ul class="lista-cores">
-                                <li class="seletor preto">Preto</li>
-                                <li class="seletor marrom">Marrom</li>
-                                <li class="seletor vermelho">Vermelho</li>
-                                <li class="seletor laranja">Laranja</li>
-                                <li class="seletor amarelo">Amarelo</li>
-                                <li class="seletor verde">Verde</li>
-                                <li class="seletor azul">Azul</li>
-                                <li class="seletor violeta">Violeta</li>
-                                <li class="seletor cinza">Cinza</li>
-                                <li class="seletor branco">Branco</li>
+                                <li class="seletor preto">Preto (0)</li>
+                                <li class="seletor marrom">Marrom (1)</li>
+                                <li class="seletor vermelho">Vermelho (2)</li>
+                                <li class="seletor laranja">Laranja (3)</li>
+                                <li class="seletor amarelo">Amarelo (4)</li>
+                                <li class="seletor verde">Verde (5)</li>
+                                <li class="seletor azul">Azul (6)</li>
+                                <li class="seletor violeta">Violeta (7)</li>
+                                <li class="seletor cinza">Cinza (8)</li>
+                                <li class="seletor branco">Branco (9)</li>
                             </ul>
                         </div>
         
                     </div>
                     <div class='faixa vermelho' id="terceira-faixa"
                         onclick="handleClickFaixa(this)">
-                        <span class='titulo-faixa'>Vermelho</span>
+                        <span class='titulo-faixa'>Vermelho (x10²)</span>
         
                         <div class="dropdown-faixa" id="terceira-faixa-seletor">
                             <ul class="lista-cores">
-                                <li class="seletor preto">Preto</li>
-                                <li class="seletor marrom">Marrom</li>
-                                <li class="seletor vermelho">Vermelho</li>
-                                <li class="seletor laranja">Laranja</li>
-                                <li class="seletor amarelo">Amarelo</li>
-                                <li class="seletor verde">Verde</li>
-                                <li class="seletor azul">Azul</li>
-                                <li class="seletor violeta">Violeta</li>
+                                <li class="seletor preto">Preto (x10⁰)</li>
+                                <li class="seletor marrom">Marrom (x10¹)</li>
+                                <li class="seletor vermelho">Vermelho (x10²)</li>
+                                <li class="seletor laranja">Laranja (x10³)</li>
+                                <li class="seletor amarelo">Amarelo (x10⁴)</li>
+                                <li class="seletor verde">Verde (x10⁵)</li>
+                                <li class="seletor azul">Azul (x10⁶)</li>
+                                <li class="seletor violeta">Violeta (x10⁷)</li>
                             </ul>
                         </div>
                     </div>
                     <div class='faixa dourado' id="quarta-faixa"
                         onclick="handleClickFaixa(this)">
                         
-                        <span class='titulo-faixa'>Dourado</span>
+                        <span class='titulo-faixa'>Dourado (5%)</span>
         
                         <div class="dropdown-faixa" id="quarta-faixa-seletor">
                             <ul class="lista-cores">
-                                <li class="seletor prata">Prata</li>
-                                <li class="seletor dourado">Dourado</li>
-                                <li class="seletor marrom">Marrom</li>
-                                <li class="seletor vermelho">Vermelho</li>
-                                <li class="seletor verde">Verde</li>
-                                <li class="seletor azul">Azul</li>
-                                <li class="seletor violeta">Violeta</li>
+                                <li class="seletor prata">Prata (10%)</li>
+                                <li class="seletor dourado">Dourado (5%)</li>
+                                <li class="seletor marrom">Marrom (1%)</li>
+                                <li class="seletor vermelho">Vermelho (2%)</li>
+                                <li class="seletor verde">Verde (0.5%)</li>
+                                <li class="seletor azul">Azul (0.25%)</li>
+                                <li class="seletor violeta">Violeta (0.1%)</li>
                             </ul>
                         </div>
                     </div>
@@ -122,16 +123,16 @@
                 </div>
                 <div class='resistor' id="resistor-cor">
                     <div class='res-valor faixa-cor marrom' id="primeira-faixa-cor">
-                        <span class='titulo-faixa'>Marrom</span>
+                        <span class='titulo-faixa'>Marrom (1)</span>
                     </div>
                     <div class='res-valor faixa-cor preto' id="segunda-faixa-cor">
-                        <span class='titulo-faixa'>Preto</span>
+                        <span class='titulo-faixa'>Preto (0)</span>
                     </div>
                     <div class='res-valor faixa-cor vermelho' id="terceira-faixa-cor">
-                        <span class='titulo-faixa'>Vermelho</span>
+                        <span class='titulo-faixa'>Vermelho (x10)</span>
                     </div>
                     <div class='res-valor faixa-cor dourado' id="quarta-faixa-cor">
-                        <span class='titulo-faixa'>Dourado</span>
+                        <span class='titulo-faixa'>Dourado (5%)</span>
                     </div>
                 </div>
                 
@@ -139,6 +140,20 @@
         </div>
     </div>
 
+    <!-- Popup explicativo -->
+    <div id="popup-calculo" class="popup-calculo">
+        <div class="popup-conteudo">
+            <span class="fechar-popup" onclick="fecharPopupCalculo()">&times;</span>
+            <h2>Como é feito o cálculo do resistor?</h2>
+            <p>O valor do resistor é calculado usando o código de cores das faixas:</p>
+            <ul>
+                <li>As duas primeiras faixas representam os dois primeiros dígitos do valor.</li>
+                <li>A terceira faixa é o multiplicador (quantos zeros adicionar).</li>
+                <li>A quarta faixa indica a tolerância do resistor.</li>
+            </ul>
+            <p>Exemplo: Marrom (1), Preto (0), Vermelho (x100) = 10 × 100 = 1.000Ω (1kΩ) com a tolerância indicada pela quarta faixa.</p>
+        </div>
+    </div>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -354,7 +369,7 @@
                 
                 border: black 1px solid;
 
-                font-size: 1.0rem;
+                font-size: 0.85rem;
 
                 transition: box-shadow 0.35s;
 
@@ -474,8 +489,66 @@
             transform: scale(1.05);
         }
 
+        #ajuda-calculo {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            z-index: 10;
+            background: #fffbe7;
+            color: #8b4513;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #ajuda-calculo:hover {
+            background: #ffe9b3;
+        }
+        .popup-calculo {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.3);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-calculo.ativo {
+            display: flex;
+        }
+        .popup-conteudo {
+            background: #fff;
+            padding: 32px 24px 24px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            max-width: 400px;
+            width: 90vw;
+            position: relative;
+        }
+        .fechar-popup {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 2rem;
+            color: #8b4513;
+            cursor: pointer;
+        }
     </style>
     <script src="js/Resistor.js"></script>
     <script src="js/index.js"></script>
+    <script>
+        function abrirPopupCalculo() {
+            document.getElementById('popup-calculo').classList.add('ativo');
+        }
+        function fecharPopupCalculo() {
+            document.getElementById('popup-calculo').classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>
