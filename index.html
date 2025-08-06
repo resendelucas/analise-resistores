@@ -9,7 +9,6 @@
     <div id="root">
         
         <div id="bloco-resistor">
-            <div id="ajuda-calculo" onclick="abrirPopupCalculo()">Como é feito o cálculo?</div>
             <div class="toggle-menu" id="toggle-menu-busca">
                 <div class="menu-option active" id="menu-option-cor" onclick="handleMenuOption(this)">Busca por cor</div>
                 <div class="menu-option" id="menu-option-valor" onclick="handleMenuOption(this)">Busca por valor</div>
@@ -100,6 +99,7 @@
                         <h2 id="texto-tolerancia"></h2>
                     </div>
                 </div>
+                <div id="ajuda-calculo" onclick="abrirPopupCalculo()">Como é feito o cálculo?</div>
             </div>
             <div class='wrapper' id="wrapper-resistor-valor">
                 <h2>Digite o valor do resistor:</h2>
@@ -201,7 +201,7 @@
             gap: 10px;
         }
         #bloco-resistor{
-            min-width: 500px;
+            min-width: 550px;
             min-height: 600px;
         }
 
@@ -219,7 +219,7 @@
             
 
 
-            width: 500px;
+            width: 550px;
             height: 600px;
 
             border-radius: 8px;
@@ -490,10 +490,8 @@
         }
 
         #ajuda-calculo {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            z-index: 10;
+            margin: 20px auto 0;
+            width: fit-content;
             background: #fffbe7;
             color: #8b4513;
             padding: 8px 16px;
